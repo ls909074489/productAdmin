@@ -35,7 +35,7 @@ public class DataService{
 		List<TreeBaseBean> list=new ArrayList<TreeBaseBean>();
 		try {
 			StringBuilder sql=new StringBuilder();
-			sql.append("select administrativeid id,name,parentid pId from bd_administrative ");
+			sql.append("select administrativeid id,name,parentid pId from yy_administrative ");
 //			sql.append("select woe_id id,name,parent_id pId from places ");
 //			sql.append("select id,name,pid pId from t_urbanandruralareas ");
 			list=dbDao.find(TreeBaseBean.class,sql.toString());
@@ -60,8 +60,8 @@ public class DataService{
 		List<TreeBaseBean> list=new ArrayList<TreeBaseBean>();
 		try {
 			StringBuilder sql=new StringBuilder();
-			//sql.append("select administrativeid id,name,parentid pId from bd_administrative ");
-			sql.append("select uuid id,admin_name name,parentid pId from bd_administrative ");
+			//sql.append("select administrativeid id,name,parentid pId from yy_administrative ");
+			sql.append("select uuid id,admin_name name,parentid pId from yy_administrative ");
 			if(StringUtils.isEmpty(pId)||pId.equals("0")){
 				sql.append(" where parentid is null and status=1");
 			}else{

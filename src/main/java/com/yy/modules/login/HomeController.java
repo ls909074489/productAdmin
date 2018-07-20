@@ -87,10 +87,12 @@ public class HomeController {
 				model.addAttribute("currentStation", station);
 			}
 			model.addAttribute("hasSelStation", hasSelStation);
-			
-			return "frame/yy_main";
 		}
-		return "frame/yy_main";
+		if(user.getUsertype()!=null&&user.getUsertype()==2){//用户类型为管理
+			return "frame/yy_main";
+		}else{
+			return "frame/yy_main_topmenu";
+		}
 	}
 
 	private String getCount(List<TreeNode> tree) {

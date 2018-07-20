@@ -9,9 +9,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Language" content="zh-CN">
 	<meta name="Keywords" content="YY2.0" />
-	<meta name="Description" content="云南电网公司大理供电局点表信息管理系统" />
-	<meta name="author" content="云南电网公司大理供电局" />
-	<title>云南电网公司大理供电局点表信息管理系统</title>
+	<meta name="Description" content="信息管理系统" />
+	<meta name="author" content="ls2008" />
+	<title>信息管理系统</title>
 	
 	<link href="${ctx}/assets/metronic/v4.5/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="${ctx}/assets/metronic/v4.5/global/plugins/bootstrap/css/bootstrap.min.css?v=20171101" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@
 	<!-- BEGIN LOGIN -->
 	<div class="main" id="main">
 		<div class="leftcontent" style="width: 580px;">
-			<h1 id="title">云南电网公司大理供电局点表信息管理系统</h1>
+			<h1 id="title">信息管理系统</h1>
 			<ul>
 				<li>多站点管理</li>
 				<li>版本控制</li>
@@ -88,14 +88,14 @@
 					<div class="input-icon input-icon-lg">
 						<i class="fa fa-user font-blue"></i>
 						<input class="form-control placeholder-no-fix" type="text" placeholder="用户名" 
-							id="username" name="username" />
+							id="username" name="username" value="1"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-icon input-icon-lg">
 						<i class="fa fa-unlock-alt font-blue"></i>
 						<input class="form-control placeholder-no-fix" 
-							type="password" placeholder="密码" id="password" name="password" />
+							type="password" placeholder="密码" id="password" name="password"  value="1"/>
 					</div>
 				</div>
 				<input type="hidden" id="validatecode" name="validatecode" />
@@ -137,7 +137,7 @@
 		</div>
 	</div>
 	<div class="footer">
-		Copyright © 2018 <a href="">云南电网公司大理供电局</a> All Righ Reserved <br>
+		Copyright © 2018 <a href="">ls2008</a> All Righ Reserved <br>
 		<span>
 			推荐使用
 			<a href="${ctx}/assets/ChromeStandalone_63.exe"target="_blank">谷歌（Chrome）浏览器</a>
@@ -184,7 +184,7 @@
 	$(document).ready( function() {
 		// 设置背景
 		$.backstretch([
-				"assets/yy/login/xingkong.jpg",
+				"assets/yy/login/timg.jpg",
 			], {
 			fade : 1000, //渐变时间
 			duration : 5000

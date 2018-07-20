@@ -127,7 +127,7 @@ nav.page-tabs {
 	
 </script>
 </head>
-<body>
+<body class="page-sidebar-closed">
 	<!-- 如果是首次登录则修改密码 -->
 	<c:if test="${empty user.changepwd or user.changepwd eq 0}">
 		<script type="text/javascript">
@@ -164,7 +164,12 @@ nav.page-tabs {
 					<a href="#"><img src="${ctx}${yy_logo_imge}" alt="logo" class="logo-default" /> </a>
 				</c:if>
 
-				<label class="yy-logo-title" style="font-size: 20px;">${yy_logo_title}</label>
+				<%-- <label class="yy-logo-title" style="font-size: 20px;">${yy_logo_title}</label> --%>
+				
+				<label  class="yy-logo-title" style="font-size: 20px;" 
+					onclick="lsAddTab('${ctx}/sys/func','功能注册','82c42da6-7ab1-4f14-a272-d7121dbf33db')">
+					功能注册cccccccc
+				</label>
 			</div>
 
 			<span style="display: none;">
@@ -560,6 +565,12 @@ nav.page-tabs {
 			loadAlertMsg();
 			// loadAdmin();
 			showUserMenu(); //加载快捷菜单
+			
+            $('body').addClass('page-sidebar-closed');
+            $('.page-sidebar-menu').addClass('page-sidebar-menu-closed');
+            if ($.cookie) {
+                $.cookie('sidebar_closed', '1');
+            }
 		});
 
 		window.onload = function() {

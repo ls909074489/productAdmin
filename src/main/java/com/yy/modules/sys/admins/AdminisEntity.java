@@ -24,7 +24,7 @@ import com.yy.frame.entity.TreeEntity;
  */
 @MetaData(value = "行政区域")
 @Entity
-@Table(name = "bd_administrative")
+@Table(name = "yy_administrative")
 @DynamicInsert
 @DynamicUpdate
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)

@@ -488,10 +488,9 @@ public class UserService extends BaseServiceImpl<UserEntity, String> {
 			}
 
 			StringBuffer sql = new StringBuffer();
-			sql.append("select u.*,o.org_name orgname,d.name deptname,p.name personname from yy_user u ");
+			sql.append("select u.*,o.org_name orgname,d.name deptname from yy_user u ");
 			sql.append("left join yy_org o on o.uuid=u.orgid ");
 			sql.append("left join yy_department d on d.uuid=u.deptid ");
-			sql.append("left join yy_person p on p.uuid =u.personid ");
 			sql.append("where u.status='1' ");
 			if (!org.springframework.util.StringUtils.isEmpty(loginname)) {
 				sql.append("and u.loginname like '%").append(loginname).append("%' ");
@@ -552,10 +551,9 @@ public class UserService extends BaseServiceImpl<UserEntity, String> {
 	public List<UserEntity> getUserBySql() {
 		List<UserEntity> list = new ArrayList<UserEntity>();
 		StringBuffer sql = new StringBuffer();
-		sql.append("select u.*,o.org_name orgname,d.name deptname,p.name personname from yy_user u ");
+		sql.append("select u.*,o.org_name orgname,d.name deptname from yy_user u ");
 		sql.append("left join yy_org o on o.uuid=u.orgid ");
 		sql.append("left join yy_department d on d.uuid=u.deptid ");
-		sql.append("left join yy_person p on p.uuid =u.personid ");
 		sql.append("where u.status='1' order by u.modifytime DESC");
 		try {
 			list = dbDao.find(UserEntity.class, sql.toString());
@@ -640,12 +638,11 @@ public class UserService extends BaseServiceImpl<UserEntity, String> {
 		List<UserEntity> list = new ArrayList<>();
 		StringBuffer sql = new StringBuffer();
 		sql.append(
-				"select u.*,o.org_name orgname,d.name deptname,p.name personname from (select t_u.* from yy_user t_u where not exists");
+				"select u.*,o.org_name orgname,d.name deptname from (select t_u.* from yy_user t_u where not exists");
 		sql.append("(select * from act_id_membership ur where ur.group_id_='");
 		sql.append(groupId).append("' and ur.user_id_=t_u.uuid)  and t_u.status=1 ) u ");
 		sql.append("left join yy_org o on o.uuid=u.orgid ");
 		sql.append("left join yy_department d on d.uuid=u.deptid ");
-		sql.append("left join yy_person p on p.uuid =u.personid ");
 		sql.append("where u.status='1' order by u.modifytime DESC");
 		try {
 			list = dbDao.find(UserEntity.class, sql.toString());
@@ -663,12 +660,11 @@ public class UserService extends BaseServiceImpl<UserEntity, String> {
 		List<UserEntity> list = new ArrayList<>();
 		StringBuffer sql = new StringBuffer();
 		sql.append(
-				"select u.*,o.org_name orgname,d.name deptname,p.name personname from (select * from act_id_membership where group_id_='");
+				"select u.*,o.org_name orgname,d.name deptname from (select * from act_id_membership where group_id_='");
 		sql.append(groupId).append("') aim ");
 		sql.append("left join yy_user u on u.uuid=aim.user_id_ ");
 		sql.append("left join yy_org o on o.uuid=u.orgid ");
 		sql.append("left join yy_department d on d.uuid=u.deptid ");
-		sql.append("left join yy_person p on p.uuid =u.personid ");
 		sql.append("where u.status='1' order by u.modifytime DESC");
 		try {
 			list = dbDao.find(UserEntity.class, sql.toString());
