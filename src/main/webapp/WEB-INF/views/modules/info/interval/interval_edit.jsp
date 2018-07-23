@@ -75,7 +75,7 @@
 				onsubmit : true,
 				rules : {
 					'name' : {required : true,maxlength : 100},
-					'price' : {required : true,number:true,digits:true,maxlength : 100},
+					'price' : {required : true,number:true,digits:true,maxlength : 10},
 					'memo' : {maxlength : 200},
 				}
 			});

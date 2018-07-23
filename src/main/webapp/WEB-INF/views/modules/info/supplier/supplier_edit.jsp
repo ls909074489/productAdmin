@@ -94,12 +94,9 @@
 				onsubmit : true,
 				rules : {
 					'name' : {required : true,maxlength : 100},
-					'enterpriseType' : {required : true,maxlength : 36},
 					'address' : {required : true,maxlength : 100},
 					'contracts' : {required : true,maxlength : 20},
 					'phone' : {required : true,maxlength : 20},
-					'email' : {required : true,maxlength : 30},
-					'website' : {required : true,maxlength : 100},
 					'memo' : {maxlength : 100},
 				}
 			});

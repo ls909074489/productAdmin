@@ -48,6 +48,7 @@
 								<input type="checkbox" class="group-checkable" data-set="#yy-table-list .checkboxes"/>
 							</th>
 							<th>操作</th>
+							<th>创建时间</th>
 							<th>名称</th>
 							<th>联系人</th>
 							<th>电话</th>
@@ -84,6 +85,12 @@
 							render : YYDataTableUtils.renderActionCol,
 							width : "50"
 						},{
+							data : "createtime",
+							width : "100",
+							visible : false,
+							className : "center",
+							orderable : true
+						},{
 							data : "name",
 							width : "100",
 							className : "center",
@@ -106,7 +113,7 @@
 						}];
 
 
-		//var _setOrder = [[5,'desc']];
+		var _setOrder = [[3,'desc']];
 		$(document).ready(function() {
 			_queryData = $("#yy-form-query").serializeArray();
 			bindListActions();
