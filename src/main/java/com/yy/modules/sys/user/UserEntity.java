@@ -91,10 +91,6 @@ public class UserEntity extends BaseEntity {
 	@MetaData(value = "显示顺序")
 	private Integer showorder;
 
-	@MetaData(value = "人员编码")
-	@Column(length = 50)
-	private String personid;
-
 	@MetaData(value = "部门编码")
 	@Column(length = 50)
 	private String deptid;
@@ -147,8 +143,6 @@ public class UserEntity extends BaseEntity {
 	private String orgname;
 	@Transient
 	private String deptname;
-	@Transient
-	private String personname;
 
 	@Transient
 	private String userrole;// 角色下的用户id add by ls2008
@@ -263,22 +257,6 @@ public class UserEntity extends BaseEntity {
 
 	public void setOrgname(String orgname) {
 		this.orgname = orgname;
-	}
-
-	public String getPersonid() {
-		return personid;
-	}
-
-	public void setPersonid(String personid) {
-		this.personid = personid;
-	}
-
-	public String getPersonname() {
-		return personname;
-	}
-
-	public void setPersonname(String personname) {
-		this.personname = personname;
 	}
 
 	public String getDeptid() {

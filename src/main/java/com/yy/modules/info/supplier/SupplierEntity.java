@@ -28,9 +28,6 @@ public class SupplierEntity extends BaseEntity {
 	@Column(length = 250)
 	private String name;
 
-	@MetaData(value = "企业类型")
-	@Column(length = 36)
-	private String enterpriseType;
 
 	@MetaData(value = "地址")
 	@Column(length = 36)
@@ -44,14 +41,6 @@ public class SupplierEntity extends BaseEntity {
 	@Column(length = 30)
 	private String phone;
 
-	@MetaData(value = "邮箱")
-	@Column(length = 30)
-	private String email;
-
-	@MetaData(value = "网址")
-	@Column(length = 250)
-	private String website;
-
 	@MetaData(value = "备注")
 	@Column(length = 250)
 	private String memo;
@@ -62,14 +51,6 @@ public class SupplierEntity extends BaseEntity {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getEnterpriseType() {
-		return enterpriseType;
-	}
-
-	public void setEnterpriseType(String enterpriseType) {
-		this.enterpriseType = enterpriseType;
 	}
 
 	public String getAddress() {
@@ -94,22 +75,6 @@ public class SupplierEntity extends BaseEntity {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getWebsite() {
-		return website;
-	}
-
-	public void setWebsite(String website) {
-		this.website = website;
 	}
 
 	public String getMemo() {

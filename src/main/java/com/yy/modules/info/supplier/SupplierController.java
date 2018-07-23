@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @date 2017-11-18 21:06:10
  */
 @Controller
-@RequestMapping(value = "/info/supplier")
+@RequestMapping(value = "/info/postgood")
 public class SupplierController extends BaseController<SupplierEntity> {
 
 	@Autowired

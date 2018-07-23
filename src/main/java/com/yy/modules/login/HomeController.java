@@ -19,6 +19,8 @@ import com.yy.common.utils.Constants;
 import com.yy.frame.security.ShiroUser;
 import com.yy.frame.tree.TreeNode;
 import com.yy.frame.tree.TreeUtils;
+import com.yy.modules.sys.enumdata.EnumDataSubEntity;
+import com.yy.modules.sys.enumdata.EnumDataUtils;
 import com.yy.modules.sys.func.FuncEntity;
 import com.yy.modules.sys.func.FuncService;
 import com.yy.modules.sys.org.OrgEntity;
@@ -91,6 +93,8 @@ public class HomeController {
 		if(user.getUsertype()!=null&&user.getUsertype()==2){//用户类型为管理
 			return "frame/yy_main";
 		}else{
+			List<EnumDataSubEntity> topMenus=EnumDataUtils.getEnumSubList("CommonMenus");
+			model.addAttribute("topMenus", topMenus);
 			return "frame/yy_main_topmenu";
 		}
 	}

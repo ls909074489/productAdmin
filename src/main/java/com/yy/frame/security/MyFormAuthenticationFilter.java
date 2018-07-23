@@ -13,7 +13,6 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
-import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -86,7 +85,6 @@ public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
 		log.setUserId(user.getUuid());
 		log.setOrgid(user.getOrgid());
 		log.setDeptid(user.getDeptid());
-		log.setPersonid(user.getPersonid());
 		logLoginService.save(log);
 
 		user.setLast_ip(request.getRemoteAddr());// 设置最后登录ip

@@ -166,10 +166,12 @@ nav.page-tabs {
 
 				<%-- <label class="yy-logo-title" style="font-size: 20px;">${yy_logo_title}</label> --%>
 				
-				<label  class="yy-logo-title" style="font-size: 20px;" 
-					onclick="lsAddTab('${ctx}/sys/func','功能注册','82c42da6-7ab1-4f14-a272-d7121dbf33db')">
-					功能注册cccccccc
-				</label>
+				<c:forEach items="${topMenus}" var="tm">
+					<label  class="yy-logo-title" style="font-size: 20px;" 
+						onclick="lsAddTab('${ctx}${tm.icon}','${tm.enumdataname}','${tm.enumdatakey}')">
+						${tm.enumdataname}
+					</label>			
+				</c:forEach>
 			</div>
 
 			<span style="display: none;">
@@ -241,13 +243,13 @@ nav.page-tabs {
 	<!-- BEGIN CONTAINER -->
 	<div class="page-container">
 		<!-- BEGIN SIDEBAR -->
-		<div class="page-sidebar-wrapper">
+		<div class="page-sidebar-wrapper" style="display: none;">
 			<!-- BEGIN SIDEBAR -->
 			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
 			<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-			<div class="page-sidebar navbar-collapse collapse">
+			<div class="page-sidebar navbar-collapse collapse" style="display: none;">
 				<!-- BEGIN SIDEBAR MENU -->
-				<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
+				<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200" style="display: none;">
 					<li class="sidebar-toggler-wrapper">
 						<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 						<div class="menu-toggler sidebar-toggler"></div>

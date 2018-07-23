@@ -1,7 +1,13 @@
 package com.yy.common.enums;
 
 public enum AuditStatus {
-	NO(0, "未审核"),//相对于订购来说是撤审
+	
+	FREE(0,"自由态"),
+//	FACTORY_REJECT(5, "工厂退回"),
+	FACTORY_CONFIRM(10, "工厂确认"),
+	SALES_REJECT(15, "业务员退回"),
+	SALES_CONFIRM(20, "业务员确认回价"),
+	
 	SUCCESS(1, "通过"),
 	FAIL(2, "失败");//相对于出入库来说是撤审
 	

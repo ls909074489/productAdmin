@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<c:set var="serviceurl" value="${ctx}/info/interval"/>
+<c:set var="serviceurl" value="${ctx}/info/purchase"/>
 <html>
 <head>
 <title>间隔信息</title>
@@ -25,6 +25,14 @@
 						<label class="control-label col-md-4 required">名称</label>
 						<div class="col-md-8">
 							<input name="name" type="text" class="form-control" value="${entity.name}">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label col-md-4 required">价格</label>
+						<div class="col-md-8">
+							<input name="price" type="text" class="form-control" value="${entity.price}">
 						</div>
 					</div>
 				</div>
@@ -67,6 +75,7 @@
 				onsubmit : true,
 				rules : {
 					'name' : {required : true,maxlength : 100},
+					'price' : {required : true,number:true,digits:true,maxlength : 100},
 					'memo' : {maxlength : 200},
 				}
 			});

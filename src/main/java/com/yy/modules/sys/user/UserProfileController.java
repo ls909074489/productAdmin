@@ -33,16 +33,12 @@ public class UserProfileController extends BaseController<UserEntity> {
 	}
 	
 	
-	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/current")
 	@ResponseBody
-	public ActionResultModel currentUser() {
-		ActionResultModel arm = new ActionResultModel();
+	public ActionResultModel<UserEntity> currentUser() {
+		ActionResultModel<UserEntity> arm = new ActionResultModel<UserEntity>();
 		try{
 		UserEntity  entity = ShiroUser.getCurrentUserEntity();
-		//ActionResultModel<UserEntity> pageData = doQuery(request);
-		// return new PageResult<UserEntity>(draw, pageData.getRecordsTotal(),
-		// pageData.getRecordsFiltered(), pageData.getRecords());
 		List<RoleEntity> objList=roleService.findSelRole(entity.getUuid());
 		String roleNames="";
 		if(objList!=null&&objList.size()>0){
@@ -72,29 +68,18 @@ public class UserProfileController extends BaseController<UserEntity> {
 	 * @param entity
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/update")
 	@ResponseBody
-	public ActionResultModel update(ServletRequest request, Model model,
+	public ActionResultModel<UserEntity> update(ServletRequest request, Model model,
 			@Valid @ModelAttribute("preloadEntity") UserEntity entity) {
-		ActionResultModel arm = new ActionResultModel();
+		ActionResultModel<UserEntity> arm = new ActionResultModel<UserEntity>();
 		try {
-//			OrgRef org=entity.getCorp();
-//			DepartmentEntity dept=entity.getDepartment();
-//			PersonEntity person=entity.getPerson();
-					
 			entity = baseService.save(entity);
 			//需要重新赋值
-//			entity.setCorp(org);
-//			entity.setDepartment(dept);
-//			entity.setPerson(person);
 			UserEntity user=ShiroUser.getCurrentUserEntity();
 			entity.setOrgname(user.getOrgname());
 			entity.setDeptname(user.getDeptname());
-			entity.setPersonname(user.getPersonname());
 			entity.setOrgid(user.getOrgid());
-			entity.setDeptid(user.getPersonid());
-			entity.setPersonid(user.getPersonid());
 			arm.setRecords(entity);
 			arm.setSuccess(true);
 			ShiroUser.updateCurrentUserEntity(entity);

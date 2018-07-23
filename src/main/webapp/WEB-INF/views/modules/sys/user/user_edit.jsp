@@ -67,7 +67,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label class="control-label col-md-4">所属单位</label>
+						<label class="control-label col-md-4 required">所属单位</label>
 						<div class="col-md-8">
 							<div class="input-group">
 								<input id="selOrgId" name="orgid" type="hidden"> 

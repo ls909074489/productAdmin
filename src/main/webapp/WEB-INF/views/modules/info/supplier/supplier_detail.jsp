@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<c:set var="serviceurl" value="${ctx}/info/supplier"/>
+<c:set var="serviceurl" value="${ctx}/info/postgood"/>
 <html>
 <head>
 <title>供应商信息</title>
@@ -27,25 +27,6 @@
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label class="control-label col-md-4">企业类型</label>
-						<div class="col-md-8">
-							<select class="yy-input-enumdata form-control" id="enterpriseType" 
-							name="enterpriseType" data-enum-group="EnterpriseType"></select>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label col-md-4">地址</label>
-						<div class="col-md-8">
-							<input name="address" type="text" class="form-control" value="${entity.address}">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
 						<label class="control-label col-md-4">联系人</label>
 						<div class="col-md-8">
 							<input name="contracts" type="text" class="form-control" value="${entity.contracts}">
@@ -60,21 +41,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label col-md-4">邮箱</label>
-						<div class="col-md-8">
-							<input name="email" type="text" class="form-control" value="${entity.email}">
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-8">
 					<div class="form-group">
-						<label class="control-label col-md-2">网址</label>
+						<label class="control-label col-md-2">地址</label>
 						<div class="col-md-10">
-							<input name="website" type="text" class="form-control" value="${entity.website}">
+							<input name="address" type="text" class="form-control" value="${entity.address}">
 						</div>
 					</div>
 				</div>

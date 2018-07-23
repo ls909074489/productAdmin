@@ -346,26 +346,17 @@ public class UserService extends BaseServiceImpl<UserEntity, String> {
 				throw new ServiceException("新密码不能与原密码相同！");
 			}
 			try {
-				// OrgRef org=user.getCorp();
-				// DepartmentEntity dept=user.getDepartment();
-				// PersonEntity person=user.getPerson();
 				user.setPlainpassword(newpassword);
 				this.entryptPassword(user);
 				user.setChangepwd((user.getChangepwd() == null ? 0 : user.getChangepwd()) + 1);
 				user = save(user);
 
 				// 需要重新赋值
-				// user.setCorp(org);
-				// user.setDepartment(dept);
-				// user.setPerson(person);
 				// 修改shiro的user 需要更新修改密码次数
 				UserEntity oldUser = ShiroUser.getCurrentUserEntity();
 				user.setOrgname(oldUser.getOrgname());
 				user.setDeptname(oldUser.getDeptname());
-				user.setPersonname(oldUser.getPersonname());
 				user.setOrgid(oldUser.getOrgid());
-				user.setDeptid(oldUser.getPersonid());
-				user.setPersonid(oldUser.getPersonid());
 				ShiroUser.updateCurrentUserEntity(user);
 			} catch (ServiceException e) {
 				throw new ServiceException(e.getMessage());

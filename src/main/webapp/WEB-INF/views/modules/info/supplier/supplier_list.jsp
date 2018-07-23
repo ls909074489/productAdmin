@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<c:set var="serviceurl" value="${ctx}/info/supplier"/>
+<c:set var="serviceurl" value="${ctx}/info/postgood"/>
 <html>
 <head>
 <title>供应商信息</title>
@@ -23,9 +23,9 @@
 			</div>
 			<div class="row yy-searchbar form-inline">
 				<form id="yy-form-query">
-					<label for="search_EQ_billstatus" class="control-label">企业类型</label>
+					<!-- <label for="search_EQ_billstatus" class="control-label">企业类型</label>
 					<select class="yy-input-enumdata form-control" id="search_EQ_enterpriseType" 
-						name="search_EQ_enterpriseType" data-enum-group="EnterpriseType"></select>
+						name="search_EQ_enterpriseType" data-enum-group="EnterpriseType"></select> -->
 						
 					<label for="search_LIKEname" class="control-label">名称</label>
 					<input type="text" autocomplete="on" name="search_LIKE_name"
@@ -49,11 +49,9 @@
 							</th>
 							<th>操作</th>
 							<th>名称</th>
-							<th>企业类型</th>
-							<th>地址</th>
 							<th>联系人</th>
 							<th>电话</th>
-							<th>邮箱</th>
+							<th>地址</th>
 						</tr>
 					</thead>
 					<tbody></tbody>
@@ -71,51 +69,38 @@
 							data : null,
 							orderable : false,
 							className : "center",
-							width : "50"
+							width : "30"
 						},{
 							data : "uuid",
 							orderable : false,
 							className : "center",
 							/* visible : false, */
-							width : "40",
+							width : "30",
 							render : YYDataTableUtils.renderCheckCol
 						},{
 							data : "uuid",
 							className : "center",
 							orderable : false,
 							render : YYDataTableUtils.renderActionCol,
-							width : "80"
+							width : "50"
 						},{
 							data : "name",
-							width : "20%",
-							className : "center",
-							orderable : true
-						},{
-							data : "enterpriseType",
-							width : "10%",
-							className : "center",
-							orderable : true,
-							render : function(data, type, full) {
-							       return YYDataUtils.getEnumName("EnterpriseType", data);
-							}
-						},{
-							data : "address",
-							width : "10%",
+							width : "100",
 							className : "center",
 							orderable : true
 						},{
 							data : "contracts",
-							width : "10%",
+							width : "50",
 							className : "center",
 							orderable : true
 						},{
 							data : "phone",
-							width : "10%",
+							width : "50",
 							className : "center",
 							orderable : true
 						},{
-							data : "email",
-							width : "10%",
+							data : "address",
+							width : "200",
 							className : "center",
 							orderable : true
 						}];
