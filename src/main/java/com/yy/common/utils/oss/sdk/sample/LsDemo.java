@@ -15,8 +15,8 @@ public class LsDemo {
     
     
 	private static String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-  private static String accessKeyId = "xmYt1ZCeJyA8yWkL";
-  private static String accessKeySecret = "z4UzrXOIqvDSiagXJeMcwefxtaq6fy";
+  private static String accessKeyId = "your accessKeyId";
+  private static String accessKeySecret = "your accessKeySecret";
   private static String bucketName = "bucket-csc";
     
     private static OSSClient client = null;
