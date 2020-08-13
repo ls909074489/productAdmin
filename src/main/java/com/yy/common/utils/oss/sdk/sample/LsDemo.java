@@ -8,11 +8,7 @@ import com.aliyun.oss.model.SetBucketCORSRequest.CORSRule;
 
 public class LsDemo {
 	
-//	private static String endpoint = "http://oss-cn-shenzhen.aliyuncs.com";
-//    private static String accessKeyId = "5uLVJDKTjUez1VsD";
-//    private static String accessKeySecret = "AZ20Sv025NRHuW3tWcWQRKfM3DJKcT";
-//    private static String bucketName = "lsbucket";
-    
+
     
 	private static String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
   private static String accessKeyId = "your accessKeyId";
