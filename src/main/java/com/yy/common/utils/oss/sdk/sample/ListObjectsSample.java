@@ -31,10 +31,10 @@ public class ListObjectsSample {
 //	  private static String bucketName = "mzcsc";
     
      //ls2008
-	  private static String endpoint = "http://oss-cn-shenzhen.aliyuncs.com";
-	  private static String accessKeyId = "5uLVJDKTjUez1VsD";
-	  private static String accessKeySecret = "AZ20Sv025NRHuW3tWcWQRKfM3DJKcT";
-	  private static String bucketName = "lsbucket";
+	  private static String endpoint = "";
+	  private static String accessKeyId = "";
+	  private static String accessKeySecret = "";
+	  private static String bucketName = "";
     
     public static void main(String[] args) throws IOException {        
         /*
