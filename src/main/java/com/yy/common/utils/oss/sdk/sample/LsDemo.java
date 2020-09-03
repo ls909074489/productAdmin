@@ -10,10 +10,10 @@ public class LsDemo {
 	
 
     
-	private static String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-  private static String accessKeyId = "your accessKeyId";
-  private static String accessKeySecret = "your accessKeySecret";
-  private static String bucketName = "bucket-csc";
+	private static String endpoint = "";
+  private static String accessKeyId = "";
+  private static String accessKeySecret = "";
+  private static String bucketName = "";
     
     private static OSSClient client = null;
 
@@ -31,11 +31,11 @@ public class LsDemo {
 	        SetBucketCORSRequest request = new SetBucketCORSRequest(bucketName);
 	        
 	        CORSRule r0 = new CORSRule();
-	        r0.addAllowdOrigin("http://172.16.16.72:8080*");
-	        r0.addAllowdOrigin("http://172.16.16.75*");
-	        r0.addAllowdOrigin("http://csc.meizu.com*");
-	        r0.addAllowdOrigin("http://tcsc.meizu.com*");
-	        r0.addAllowdOrigin("http://localhost:8080*");
+	        r0.addAllowdOrigin("*");
+	        r0.addAllowdOrigin("");
+	        r0.addAllowdOrigin("");
+	        r0.addAllowdOrigin("*");
+	        r0.addAllowdOrigin("");
 	        r0.addAllowedMethod("POST");
 	        r0.addAllowedHeader("*");// r0.addAllowedHeader("Authorization");
 //	        r0.addExposeHeader("x-oss-test");
