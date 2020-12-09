@@ -19,17 +19,7 @@ import com.aliyun.oss.model.ObjectListing;
  * from Aliyun OSS using the OSS SDK for Java.
  */
 public class ListObjectsSample {
-	//mz
-//	private static String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-//    private static String accessKeyId = "xmYt1ZCeJyA8yWkL";
-//    private static String accessKeySecret = "z4UzrXOIqvDSiagXJeMcwefxtaq6fy";
-//    private static String bucketName = "bucket-csc";
-    //anshun
-//	  private static String endpoint = "http://oss-cn-shenzhen.aliyuncs.com";
-//	  private static String accessKeyId = "Yf3zvuMZLIJ38RP4";
-//	  private static String accessKeySecret = "K5yzm9zec3qYe8A2x3qQnzjlyQEShr";
-//	  private static String bucketName = "mzcsc";
-    
+	    
      //ls2008
 	  private static String endpoint = "";
 	  private static String accessKeyId = "";
